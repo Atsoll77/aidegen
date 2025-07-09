@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI_DEGEN $AiDN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #25064c, #0a2e75);
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    header img {
+      width: 120px;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.85; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    .slogan {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #a4d4ff;
+    }
+
+    .section {
+      padding: 60px 20px;
+    }
+
+    .section:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .section img {
+      max-width: 300px;
+      margin-top: 20px;
+    }
+
+    .social {
+      margin-top: 40px;
+    }
+
+    .social a {
+      color: #72f5ff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2em;
+    }
+
+    .contract-box {
+      margin-top: 20px;
+    }
+
+    .copy-btn {
+      background: #72f5ff;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #000;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #999;
+    }
+
+    canvas {
+      max-width: 400px;
+      margin: 30px auto 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="YOUR_LOGO_URL_HERE" alt="AI_Degen Logo" />
+    <h1>AI_DEGEN $AiDN</h1>
+    <p class="slogan">The Future Belongs to Strong Communities</p>
+  </header>
+
+  <section class="section">
+    <h2>What is AI_DEGEN?</h2>
+    <p>
+      AI_DEGEN is more than just a memecoin — it's a movement powered by technology, creativity,
+      and a vibrant community. With no presale or private allocations, AI_DEGEN is for the people,
+      by the people.
+    </p>
+    <img src="image3.png" alt="To the Moon" />
+  </section>
+
+  <section class="section">
+    <h2>Tokenomics</h2>
+    <p>
+      <strong>Total Supply:</strong> 1,000,000,000 $AiDN<br />
+      <strong>Presale:</strong> None<br />
+      <strong>Private Sale:</strong> None<br />
+      <strong>For the Community:</strong> 100%
+    </p>
+    <canvas id="supplyChart"></canvas>
+    <script>
+      const ctx = document.getElementById('supplyChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Community'],
+          datasets: [{
+            data: [100],
+            backgroundColor: ['#72f5ff'],
+            hoverBackgroundColor: ['#a374f7'],
+            borderColor: '#fff',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: true,
+              position: 'bottom',
+              labels: {
+                color: 'white',
+                font: {
+                  size: 14
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </section>
+
+  <section class="section">
+    <h2>Join the Movement</h2>
+    <p>
+      Whether you're a builder, dreamer, artist, or degenerate — this is your call to rise.
+      Let's go to the moon. Together.
+    </p>
+    <div class="social">
+      <a href="https://t.me/YourTelegram" target="_blank">Telegram</a>
+      <a href="https://twitter.com/YourTwitter" target="_blank">Twitter</a>
+      <a href="https://pump.fun" target="_blank">Pump.fun</a>
+      <a href="https://dexscreener.com" target="_blank">Dexscreener</a>
+    </div>
+    <div class="contract-box">
+      <p>Contract Address:</p>
+      <input type="text" value="YOUR_CA_HERE" id="contract" readonly style="padding: 10px; width: 250px;" />
+      <button class="copy-btn" onclick="copyCA()">Copy CA</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 AI_DEGEN. All rights reserved.
+  </footer>
+
+  <script>
+    function copyCA() {
+      var copyText = document.getElementById("contract");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Contract address copied to clipboard!");
+    }
+  </script>
+</body>
+</html>
